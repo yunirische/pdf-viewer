@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-background: #F4F5F7;
+  --color-foreground: #111827;
+  
+  --color-card: #FFFFFF;
+  --color-card-foreground: #111827;
+  
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #111827;
+  
+  --color-primary: #2C64E3;
+  --color-primary-foreground: #FFFFFF;
+  
+  --color-secondary: #E5E7EB;
+  --color-secondary-foreground: #111827;
+  
+  --color-muted: #F9FAFB;
+  --color-muted-foreground: #6B7280;
+  
+  --color-accent: #EFF6FF;
+  --color-accent-foreground: #2C64E3;
+  
+  --color-destructive: #EF4444;
+  --color-destructive-foreground: #FFFFFF;
+  
+  --color-border: #D1D5DB;
+  --color-input: #D1D5DB;
+  --color-ring: #2C64E3;
+  
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+/* Sidebar Specifics */
+.bg-sidebar {
+  background-color: #1A1C1E;
+}
+
+.text-sidebar {
+  color: #9CA3AF;
+}
+
+/* Custom scrollbar for Geometric Balance */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
+}
+
+/* Tabular numbers for data alignment */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Monospace for data values */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Source Trace Box */
+.source-trace-box {
+  background: #111827;
+  color: #34D399;
+  border-left: 3px solid #2C64E3;
+}
+
+.panel-title {
+  @apply text-[11px] font-bold uppercase tracking-widest text-[#6B7280] flex items-center justify-between;
+}
